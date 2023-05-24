@@ -7,13 +7,17 @@ import {HttpClientModule} from "@angular/common/http";
 import { MenuComponent } from './menu/menu.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ServerComponent } from './server/server.component';
+import { DirectiveComponent } from './Example/directive/directive.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
     MenuComponent,
-    DataBindingComponent
+    DataBindingComponent,
+    ServerComponent,
+    DirectiveComponent
   ],
   imports: [
     BrowserModule,

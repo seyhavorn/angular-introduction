@@ -8,6 +8,12 @@ import {Component, OnInit} from '@angular/core';
 export class DataBindingComponent implements OnInit {
 
   username: string = '';
+  status: string = 'online';
+  random: number | undefined;
+
+  constructor() {
+    this.status = Math.random() > 0.5 ? 'online' : 'offline';
+  }
 
   ngOnInit() {
 
@@ -15,5 +21,9 @@ export class DataBindingComponent implements OnInit {
 
   resetUser() {
     this.username = '';
+  }
+
+  randomString(): void {
+    this.random = Math.random();
   }
 }
