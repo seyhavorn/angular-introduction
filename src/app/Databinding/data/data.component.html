@@ -1,0 +1,5 @@
+<div class="container">
+  <div class="row">
+    <intro-form *ngFor="let form of forms" [binding]="form" (dataOutput)="OnDataOutput()"></intro-form>
+  </div>
+</div>
