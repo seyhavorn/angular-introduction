@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {RecipeInterface, RecipeModel} from "../../Model/recipe.model";
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { RecipeModel } from "../../Model/recipe.model";
 
 @Component({
   selector: 'intro-recipe-list',
@@ -8,16 +8,20 @@ import {RecipeInterface, RecipeModel} from "../../Model/recipe.model";
 })
 export class RecipeListComponent implements OnInit {
 
+  @Output() recipeWasSelected = new EventEmitter<RecipeModel>();
   recipes: RecipeModel[] = [
-    new RecipeModel('Adf dfd fdf dfd fd fdf dfd f', 'ssdfsdfsdfsdfs', 'https://images.unsplash.com/photo-1684867933974-af23d25d6d00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'),
-    new RecipeModel('Adf dfd fdf asdasddfd fd fdf dfd f', 'ssdasdasdfsdfsdfsdfs', 'https://plus.unsplash.com/premium_photo-1675826725982-e8508781c558?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'),
+    new RecipeModel('A Test Recipe', 'This is simply a test', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'),
+    new RecipeModel('Another Test Recipe', 'This is simply a test', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg')
   ];
 
   constructor() {
   }
 
   ngOnInit() {
-    console.log(this.recipes);
+  }
+
+  onRecipeSelected(recipe: RecipeModel) {
+    this.recipeWasSelected.emit(recipe);
   }
 
 }
