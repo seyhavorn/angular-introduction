@@ -1,4 +1,4 @@
-import { Component, OnInit, SimpleChange } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Binding } from "../form/form.component";
 
 @Component({

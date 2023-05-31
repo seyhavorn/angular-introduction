@@ -1,0 +1,30 @@
+<div class="container">
+  <h3>Directive</h3>
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-sm btn-primary" (click)="checkOnlyOdd()">
+        Only show odd numbers
+      </button>
+      <br /><br />
+      <ul class="list-group">
+        <div *ngIf="onlyOdd">
+          <li class="list-group-item" *ngFor="let odd of oddNumbers">
+            {{ odd }}
+          </li>
+        </div>
+        <div *ngIf="!onlyOdd">
+          <li
+            class="list-group-item"
+            ngClass="{ odd: odd % 2 !== 0 }"
+            *ngFor="let even of evenNumbers"
+          >
+            {{ even }}
+          </li>
+        </div>
+      </ul>
+      <p appBasicHightlight>Style me with basic Driective!</p>
+      <p appBetterHightligh>This is my Style with better Highlight!</p>
+    </div>
+  </div>
+</div>
+
