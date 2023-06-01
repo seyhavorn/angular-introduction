@@ -1,1 +1,7 @@
-<p>databinding-modules works!</p>
+<div class="container row row-gap-3">
+  <h4>From Child</h4>
+  <p>Text From Child: <span class="text-danger fw-bolder"> {{ textFromChild }}</span></p>
+  <div class="col-3" *ngFor="let card of cards">
+    <intro-child [card]="card" (outputText)="OutputText($event)"></intro-child>
+  </div>
+</div>

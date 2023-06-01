@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { DataComponent } from './Databinding/data/data.component';
 import { FormComponent } from './Databinding/form/form.component';
 import { DatabindingModulesComponent } from './databinding-modules.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
-  declarations: [DataComponent, FormComponent, DatabindingModulesComponent],
+  declarations: [],
   imports: [CommonModule],
 })
 export class DataBindingModule {

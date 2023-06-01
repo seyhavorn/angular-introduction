@@ -6,14 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./directive-modules.component.css'],
 })
 export class DirectiveModulesComponent implements OnInit {
-  // numbers = [1, 2, 3, 4, 5];
   oddNumbers = [1, 3, 5];
   evenNumbers = [2, 4];
   onlyOdd = false;
+  value = 10;
 
-  ngOnInit(): void {
-    console.log('Hello');
-  }
+  ngOnInit(): void {}
 
   checkOnlyOdd() {
     this.onlyOdd = !this.onlyOdd;

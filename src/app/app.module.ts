@@ -3,18 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MenuComponent } from './menu/menu.component';
+import { MenuComponent } from './project/menu/menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { RecipesComponent } from './project/recipes/recipes.component';
+import { RecipeListComponent } from './project/recipes/recipe-list/recipe-list.component';
+import { RecipeDetailComponent } from './project/recipes/recipe-detail/recipe-detail.component';
+import { RecipeItemComponent } from './project/recipes/recipe-list/recipe-item/recipe-item.component';
+import { ShoppingListComponent } from './project/shopping-list/shopping-list.component';
+import { ShoppingEditComponent } from './project/shopping-list/shopping-edit/shopping-edit.component';
 import { BasicHighlightDirective } from './directive/basic-highlight/basic-highlight.directive';
 import { BetterHightlighDirective } from './directive/better-highlight/better-hightligh.directive';
-import { DirectiveModule } from './directive/directive.module';
 import { DirectiveModulesComponent } from './directive/directive-modules.component';
+import { DatabindingModulesComponent } from './data-binding/databinding-modules.component';
+import { ChildComponent } from './data-binding/child/child.component';
+import { UnlessDirective } from './directive/unless.directive';
+import { DropdownDirective } from './project/shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,11 @@ import { DirectiveModulesComponent } from './directive/directive-modules.compone
     ShoppingEditComponent,
     DirectiveModulesComponent,
     BasicHighlightDirective,
-    BetterHightlighDirective
+    BetterHightlighDirective,
+    DatabindingModulesComponent,
+    ChildComponent,
+    UnlessDirective,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
