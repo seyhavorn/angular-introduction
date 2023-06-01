@@ -18,6 +18,10 @@ import { DatabindingModulesComponent } from './data-binding/databinding-modules.
 import { ChildComponent } from './data-binding/child/child.component';
 import { UnlessDirective } from './directive/unless.directive';
 import { DropdownDirective } from './project/shared/dropdown.directive';
+import { AccountComponent } from './serviceDependency/account/account.component';
+import { NewAccountComponent } from './serviceDependency/new-account/new-account.component';
+import { ServerModuleComponent } from './serviceDependency/server-module/server-module.component';
+import { LogginService } from './serviceDependency/services/loggin.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,10 @@ import { DropdownDirective } from './project/shared/dropdown.directive';
     DatabindingModulesComponent,
     ChildComponent,
     UnlessDirective,
-    DropdownDirective
+    DropdownDirective,
+    AccountComponent,
+    NewAccountComponent,
+    ServerModuleComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +51,9 @@ import { DropdownDirective } from './project/shared/dropdown.directive';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    LogginService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
