@@ -13,6 +13,7 @@ export class CardComponent implements OnInit {
   @Output() cardContent: EventEmitter<CardType> = new EventEmitter<CardType>();
 
   ngOnInit(): void {
+
   }
 
   sendTitle(title?: string) {
@@ -20,7 +21,10 @@ export class CardComponent implements OnInit {
   }
 
   sendCardToParent(card?: CardType): void {
+    localStorage.removeItem('cardItem');
     this.cardContent.emit(card);
-    console.log('this card', card);
+    if (!localStorage.getItem('cardItem')) {
+      localStorage.setItem('cardItem', JSON.stringify(card));
+    }
   }
 }

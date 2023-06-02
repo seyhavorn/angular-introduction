@@ -35,6 +35,12 @@ export class ContentComponent implements OnInit {
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi atque aut corporis doloribus dolorum ea eos et exercitationem, "
       }
     ];
+
+    const cardFromLocal = localStorage.getItem('cardItem');
+
+    if (cardFromLocal !== null) {
+      this.myCard = JSON.parse(cardFromLocal);
+    }
   }
 
   getTitle(data: string): void {

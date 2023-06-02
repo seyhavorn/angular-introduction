@@ -1,10 +1,17 @@
 <div class="container row gap-row-4">
-    <h6>Title From Child: <span class="text-danger fw-bolder">{{ titleFromChild }}</span></h6>
-    <div *ngIf="myCard">
-        <h4>My Card from Child</h4>
-        <intro-card [card]="myCard"></intro-card>
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-6 mt-4" *ngFor="let card of cards">
+                <intro-card [card]="card" (title)="getTitle($event)"
+                            (cardContent)="getCardFromChild($event)"></intro-card>
+            </div>
+        </div>
     </div>
-    <div class="col-md-3 mt-4" *ngFor="let card of cards">
-        <intro-card [card]="card" (title)="getTitle($event)" (cardContent)="getCardFromChild($event)"></intro-card>
+    <div class="col-md-3 float-end bg-gradient">
+        <h6>Title From Child: <span class="text-danger fw-bolder">{{ titleFromChild }}</span></h6>
+        <div *ngIf="myCard">
+            <h4>My Card from Child</h4>
+            <intro-card [card]="myCard"></intro-card>
+        </div>
     </div>
 </div>
