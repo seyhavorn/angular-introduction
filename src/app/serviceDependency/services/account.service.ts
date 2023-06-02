@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LogginService } from './loggin.service';
+import { LoginService } from './loginService';
 
 @Injectable()
 export class AccountService {
@@ -18,7 +18,7 @@ export class AccountService {
     },
   ];
 
-  constructor(private logginService: LogginService) {}
+  constructor(private logginService: LoginService) {}
 
   addAccount(name: string, status: string) {
     this.accounts.push({ name: name, status: status });

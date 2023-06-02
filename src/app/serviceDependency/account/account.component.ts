@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { LogginService } from '../services/loggin.service';
+import { LoginService } from '../services/loginService';
 import { AccountService } from '../services/account.service';
 
 type NewType = AccountService;

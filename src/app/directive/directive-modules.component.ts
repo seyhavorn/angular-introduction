@@ -11,7 +11,8 @@ export class DirectiveModulesComponent implements OnInit {
   onlyOdd = false;
   value = 10;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   checkOnlyOdd() {
     this.onlyOdd = !this.onlyOdd;

@@ -1,0 +1,6 @@
+<div class="container row gap-row-4">
+    <h6>Title From Children: <span class="text-danger fw-bolder">{{ titleFromChild }}</span></h6>
+    <div class="col-md-3" *ngFor="let card of cards">
+        <intro-card [card]="card" (title)="getTitle($event)"></intro-card>
+    </div>
+</div>

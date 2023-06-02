@@ -21,7 +21,9 @@ import { DropdownDirective } from './project/shared/dropdown.directive';
 import { AccountComponent } from './serviceDependency/account/account.component';
 import { NewAccountComponent } from './serviceDependency/new-account/new-account.component';
 import { ServerModuleComponent } from './serviceDependency/server-module/server-module.component';
-import { LogginService } from './serviceDependency/services/loggin.service';
+import { LoginService } from './serviceDependency/services/loginService';
+import { CardComponent } from "./data-binding/card/card.component";
+import { ContentComponent } from "./data-binding/content/content.component";
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { LogginService } from './serviceDependency/services/loggin.service';
     DropdownDirective,
     AccountComponent,
     NewAccountComponent,
-    ServerModuleComponent
+    ServerModuleComponent,
+    CardComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
@@ -52,8 +56,9 @@ import { LogginService } from './serviceDependency/services/loggin.service';
     FormsModule
   ],
   providers: [
-    LogginService
+    LoginService
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}
