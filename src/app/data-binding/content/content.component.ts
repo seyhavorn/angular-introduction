@@ -9,6 +9,7 @@ import { CardType } from "../Card.interface";
 export class ContentComponent implements OnInit {
 
   cards: CardType[] = [];
+  myCard!: CardType;
   titleFromChild?: string;
 
   ngOnInit(): void {
@@ -19,12 +20,12 @@ export class ContentComponent implements OnInit {
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi atque aut corporis doloribus dolorum ea eos et exercitationem, "
       },
       {
-        image: "./assets/card1.jpg",
+        image: "./assets/card2.jpg",
         title: "Card 2",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi atque aut corporis doloribus dolorum ea eos et exercitationem, "
       },
       {
-        image: "./assets/card1.jpg",
+        image: "./assets/card3.jpg",
         title: "Card 3",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi atque aut corporis doloribus dolorum ea eos et exercitationem, "
       },
@@ -38,5 +39,9 @@ export class ContentComponent implements OnInit {
 
   getTitle(data: string): void {
     this.titleFromChild = data;
+  }
+
+  getCardFromChild(card: CardType) {
+    this.myCard = card;
   }
 }
