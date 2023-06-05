@@ -3,7 +3,12 @@
         <div class="row">
             <div class="col-md-6 mt-4" *ngFor="let card of cards">
                 <intro-card [card]="card" (title)="getTitle($event)"
-                            (cardContent)="getCardFromChild($event)"></intro-card>
+                            (cardContent)="getCardFromChild($event)">
+                    <h1 headerCard>Content from child</h1>
+                  <ng-container>
+
+                  </ng-container>
+                </intro-card>
             </div>
         </div>
     </div>
@@ -11,7 +16,11 @@
         <h6>Title From Child: <span class="text-danger fw-bolder">{{ titleFromChild }}</span></h6>
         <div *ngIf="myCard">
             <h4>My Card from Child</h4>
-            <intro-card [card]="myCard"></intro-card>
+            <intro-card [card]="myCard">
+                <p itemCard>
+                    Description for this.
+                </p>
+            </intro-card>
         </div>
     </div>
 </div>

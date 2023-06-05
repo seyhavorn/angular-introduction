@@ -1,16 +1,16 @@
 <a
-  href="#"
-  class="list-group-item clearfix d-flex justify-content-between border border-primary rounded-2 p-3 mb-3"
-  (click)="onSelected()">
-  <div class="pull-left">
-    <h4 class="list-group-item-heading">{{ recipe?.name }}</h4>
-    <p class="list-group-item-text">{{ recipe?.description }}</p>
-  </div>
-  <span class="d-flex justify-content-end align-content-end float-end">
+	href="#"
+	class="list-group-item clearfix d-flex justify-content-between border border-primary rounded-2 p-3 mb-3"
+	(click)="onSelected()">
+	<div class="pull-left">
+		<h4 class="list-group-item-heading">{{ recipe?.name }}</h4>
+		<p class="list-group-item-text">{{ recipe?.description }}</p>
+	</div>
+	<span class="d-flex justify-content-end align-content-end float-end">
         <img
-          [src]="recipe?.imagePath"
-          alt="{{ recipe?.name }}"
-          class="img-responsive"
-          style="max-height: 50px;">
+	        [src]="recipe?.imagePath"
+	        alt="{{ recipe?.name }}"
+	        class="img-responsive"
+	        style="max-height: 50px;">
       </span>
 </a>

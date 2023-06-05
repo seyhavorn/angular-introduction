@@ -33,6 +33,7 @@
               "node_modules/bootstrap/dist/css/bootstrap-reboot.rtl.css",
               "node_modules/bootstrap/dist/css/bootstrap-utilities.css",
               "node_modules/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.css",
               "src/styles.css"
             ],
             "scripts": [

@@ -7,3 +7,6 @@
         <button class="btn btn-sm btn-primary mx-2" (click)="sendCardToParent(card)">Show Card</button>
     </div>
 </div>
+<ng-content select="[itemCard]" adhost></ng-content>
+<ng-content select="[headerCard]"></ng-content>
+<ng-container></ng-container>

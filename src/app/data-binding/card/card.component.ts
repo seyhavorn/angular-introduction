@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { CardType } from "../Card.interface";
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {CardType} from "../Card.interface";
+import {AdHostDirective} from "../adHost.directive";
 
 @Component({
   selector: 'intro-card',
@@ -11,12 +12,13 @@ export class CardComponent implements OnInit {
   @Input() card: CardType | undefined;
   @Output() title: EventEmitter<string> = new EventEmitter<string>();
   @Output() cardContent: EventEmitter<CardType> = new EventEmitter<CardType>();
+  @ViewChild(AdHostDirective, { static: true}) adHost!: AdHostDirective;
 
   ngOnInit(): void {
 
   }
 
-  sendTitle(title?: string) {
+  sendTitle(title?: string): void {
     this.title.emit(title);
   }
 

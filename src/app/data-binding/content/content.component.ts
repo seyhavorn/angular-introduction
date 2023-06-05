@@ -1,16 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { CardType } from "../Card.interface";
+import {Component, OnDestroy, OnInit, ViewContainerRef} from '@angular/core';
+import {CardType} from "../Card.interface";
 
 @Component({
   selector: 'intro-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
-export class ContentComponent implements OnInit {
+export class ContentComponent implements OnInit, OnDestroy {
 
   cards: CardType[] = [];
   myCard!: CardType;
   titleFromChild?: string;
+
+  constructor(
+    private viewContainerRef: ViewContainerRef
+  ) {
+    console.log("index" + -1);
+  }
 
   ngOnInit(): void {
     this.cards = [
@@ -22,16 +28,6 @@ export class ContentComponent implements OnInit {
       {
         image: "./assets/card2.jpg",
         title: "Card 2",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi atque aut corporis doloribus dolorum ea eos et exercitationem, "
-      },
-      {
-        image: "./assets/card3.jpg",
-        title: "Card 3",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi atque aut corporis doloribus dolorum ea eos et exercitationem, "
-      },
-      {
-        image: "./assets/card1.jpg",
-        title: "Card 4",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi atque aut corporis doloribus dolorum ea eos et exercitationem, "
       }
     ];
@@ -49,5 +45,9 @@ export class ContentComponent implements OnInit {
 
   getCardFromChild(card: CardType) {
     this.myCard = card;
+  }
+
+  ngOnDestroy() {
+
   }
 }

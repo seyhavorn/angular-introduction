@@ -24,41 +24,55 @@ import { ServerModuleComponent } from './serviceDependency/server-module/server-
 import { LoginService } from './serviceDependency/services/loginService';
 import { CardComponent } from "./data-binding/card/card.component";
 import { ContentComponent } from "./data-binding/content/content.component";
+import { AdHostDirective } from "./data-binding/adHost.directive";
+import { UserActiveComponent } from './serviceDependency/User/user-active/user-active.component';
+import { UserInactiveComponent } from './serviceDependency/User/user-inactive/user-inactive.component';
+import { UserComponent } from './serviceDependency/User/user/user.component';
+import { UserService } from "./serviceDependency/User/user.service";
+import { CounterService } from "./serviceDependency/User/counter.service";
+import { ShoppingListService } from "./project/Services/shopping-list.service";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MenuComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
-    DirectiveModulesComponent,
-    BasicHighlightDirective,
-    BetterHightlighDirective,
-    DatabindingModulesComponent,
-    ChildComponent,
-    UnlessDirective,
-    DropdownDirective,
-    AccountComponent,
-    NewAccountComponent,
-    ServerModuleComponent,
-    CardComponent,
-    ContentComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule
-  ],
-  providers: [
-    LoginService
-  ],
-  bootstrap: [AppComponent],
+	declarations: [
+		AppComponent,
+		MenuComponent,
+		RecipesComponent,
+		RecipeListComponent,
+		RecipeDetailComponent,
+		RecipeItemComponent,
+		ShoppingListComponent,
+		ShoppingEditComponent,
+		DirectiveModulesComponent,
+		BasicHighlightDirective,
+		BetterHightlighDirective,
+		DatabindingModulesComponent,
+		ChildComponent,
+		UnlessDirective,
+		DropdownDirective,
+		AccountComponent,
+		NewAccountComponent,
+		ServerModuleComponent,
+		CardComponent,
+		ContentComponent,
+		AdHostDirective,
+		UserActiveComponent,
+		UserInactiveComponent,
+		UserComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		HttpClientModule,
+		ReactiveFormsModule,
+		FormsModule
+	],
+	providers: [
+		LoginService,
+		UserService,
+		CounterService,
+		ShoppingListService
+	],
+	bootstrap: [AppComponent],
 })
 export class AppModule {
 }

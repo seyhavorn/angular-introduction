@@ -1,14 +1,13 @@
 <div class="row">
-  <div class="col-md-5">
-    <intro-recipe-list
-      (recipeWasSelected)="selectedRecipe = $event"></intro-recipe-list>
-  </div>
-  <div class="col-md-7">
-    <intro-recipe-detail
-      *ngIf="selectedRecipe; else infoText"
-      [recipe]="selectedRecipe"></intro-recipe-detail>
-    <ng-template #infoText>
-      <p>Please select a Recipe!</p>
-    </ng-template>
-  </div>
+	<div class="col-md-5">
+		<intro-recipe-list></intro-recipe-list>
+	</div>
+	<div class="col-md-7">
+		<intro-recipe-detail
+			*ngIf="selectedRecipe; else infoText"
+			[recipe]="selectedRecipe"></intro-recipe-detail>
+		<ng-template #infoText>
+			<p>Please select a Recipe!</p>
+		</ng-template>
+	</div>
 </div>
