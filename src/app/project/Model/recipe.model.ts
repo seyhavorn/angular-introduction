@@ -1,22 +1,27 @@
-export class RecipeModel {
-  public name?: string;
-  public description?: string;
-  public imagePath?: string;
+import { IngredientModel } from "../shared/ingredient.model";
 
-  constructor(
-    name?: string,
-    description?: string,
-    imagePath?: string
-  ) {
-    this.name = name;
-    this.description = description;
-    this.imagePath = imagePath;
-  }
+export class RecipeModel {
+	public name?: string;
+	public description?: string;
+	public imagePath?: string;
+	public ingredients?: IngredientModel[];
+
+	constructor(
+		name?: string,
+		description?: string,
+		imagePath?: string,
+		ingredients?: IngredientModel[]
+	) {
+		this.name = name;
+		this.description = description;
+		this.imagePath = imagePath;
+		this.ingredients = ingredients;
+	}
 }
 
 
 export interface RecipeInterface {
-  name?: string;
-  description?: string;
-  imagePath?: string;
+	name?: string;
+	description?: string;
+	imagePath?: string;
 }

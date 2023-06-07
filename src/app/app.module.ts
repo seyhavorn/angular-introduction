@@ -31,6 +31,16 @@ import { UserComponent } from './serviceDependency/User/user/user.component';
 import { UserService } from "./serviceDependency/User/user.service";
 import { CounterService } from "./serviceDependency/User/counter.service";
 import { ShoppingListService } from "./project/Services/shopping-list.service";
+import { UsersRoutingComponent } from './Routing/users-routing/users-routing.component';
+import { UserRoutingComponent } from './Routing/users-routing/user-routing/user-routing.component';
+import { ServersRoutingComponent } from './Routing/servers-routing/servers-routing.component';
+import { HomeRoutingComponent } from './Routing/home-routing/home-routing.component';
+import { MenuRoutingComponent } from './Routing/menu-routing/menu-routing.component';
+import { ServerRoutingComponent } from './Routing/servers-routing/server-routing/server-routing.component';
+import {
+	EditServerRoutingComponent
+} from './Routing/servers-routing/edit-server-routing/edit-server-routing.component';
+import { ServersRouteingService } from "./Routing/servers-routing/servers-routing.service";
 
 @NgModule({
 	declarations: [
@@ -57,7 +67,14 @@ import { ShoppingListService } from "./project/Services/shopping-list.service";
 		AdHostDirective,
 		UserActiveComponent,
 		UserInactiveComponent,
-		UserComponent
+		UserComponent,
+		UsersRoutingComponent,
+		UserRoutingComponent,
+		ServersRoutingComponent,
+		HomeRoutingComponent,
+		MenuRoutingComponent,
+		ServerRoutingComponent,
+		EditServerRoutingComponent
 	],
 	imports: [
 		BrowserModule,
@@ -70,7 +87,8 @@ import { ShoppingListService } from "./project/Services/shopping-list.service";
 		LoginService,
 		UserService,
 		CounterService,
-		ShoppingListService
+		ShoppingListService,
+		ServersRouteingService
 	],
 	bootstrap: [AppComponent],
 })
