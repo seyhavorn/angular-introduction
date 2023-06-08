@@ -2,23 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 
 @Component({
-	selector: 'intro-home-routing',
-	templateUrl: './home-routing.component.html',
-	styleUrls: ['./home-routing.component.css']
+  selector: 'intro-home-routing',
+  templateUrl: './home-routing.component.html',
+  styleUrls: ['./home-routing.component.css']
 })
 export class HomeRoutingComponent implements OnInit {
 
-	constructor(
-		private router: Router
-	) {
-	}
+  constructor(
+    private router: Router
+  ) {
+  }
 
-	ngOnInit() {
+  ngOnInit() {
 
-	}
+  }
 
-	onLoadServer() {
-		// navigate to:
-		this.router.navigate(['/servers']);
-	}
+  onLoadServer(id: number) {
+    this.router.navigate(['/servers', id, 'edit', {queryParams: {allowEdit: '1'}, fragment: "loading"}]);
+  }
 }

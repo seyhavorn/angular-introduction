@@ -41,6 +41,7 @@ import {
 	EditServerRoutingComponent
 } from './Routing/servers-routing/edit-server-routing/edit-server-routing.component';
 import { ServersRouteingService } from "./Routing/servers-routing/servers-routing.service";
+import { PageNotFoundComponent } from './Routing/page-not-found/page-not-found.component';
 
 @NgModule({
 	declarations: [
@@ -74,7 +75,8 @@ import { ServersRouteingService } from "./Routing/servers-routing/servers-routin
 		HomeRoutingComponent,
 		MenuRoutingComponent,
 		ServerRoutingComponent,
-		EditServerRoutingComponent
+		EditServerRoutingComponent,
+  PageNotFoundComponent
 	],
 	imports: [
 		BrowserModule,

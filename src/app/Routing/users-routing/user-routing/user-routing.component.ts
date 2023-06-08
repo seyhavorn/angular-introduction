@@ -27,7 +27,7 @@ export class UserRoutingComponent implements OnInit, OnDestroy {
         id: +params['id'],
         name: params['name']
       }
-    })
+    });
   }
 
   ngOnDestroy() {
