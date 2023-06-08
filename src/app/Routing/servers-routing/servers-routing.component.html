@@ -1,18 +1,20 @@
 <div class="row">
-    <div class="col-xs-12 col-sm-4">
-        <div class="list-group">
-            <a
-                    href="#"
-                    class="list-group-item"
-                    *ngFor="let server of servers">
-                {{ server.name }}
-            </a>
-        </div>
+  <div class="col-xs-12 col-sm-4">
+    <div class="list-group">
+      <a
+        [routerLink]="['/servers',3, 'edit']"
+        [queryParams]="{ allowEdit: '1'  }"
+        class="list-group-item"
+        *ngFor="let server of servers">
+        {{ server.name }}
+      </a>
     </div>
-    <div class="col-xs-12 col-sm-4">
-        <intro-edit-server-routing></intro-edit-server-routing>
-        <hr>
-        <intro-servers-routing></intro-servers-routing>
-    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4 gap-4">
+    <button class="btn btn-sm btn-info mb-3" (click)="onReloadPages();">Reload pages</button>
+    <intro-edit-server-routing></intro-edit-server-routing>
+    <hr>
+    <intro-server-routing></intro-server-routing>
+  </div>
 </div>
 

@@ -7,12 +7,12 @@ import { ServersRouteingService } from "../servers-routing.service";
 	styleUrls: ['./server-routing.component.css']
 })
 export class ServerRoutingComponent implements OnInit {
-	server?: { id: number, name: string, status: string };
+	server?: {id: number, name: string, status: string};
 
-	constructor(private serversService: ServersRouteingService) {
-	}
+	constructor(private serversService: ServersRouteingService) { }
 
 	ngOnInit() {
 		this.server = this.serversService.getServer(1);
 	}
+
 }

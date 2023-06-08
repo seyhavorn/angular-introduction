@@ -1,35 +1,6 @@
-<!--<div class="container">-->
-
-<!--    <div class="row">-->
-<!--        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">-->
-<!--            <ul class="nav nav-tabs">-->
-<!--                <li role="presentation" class="active"><a href="#">Home</a></li>-->
-<!--                <li role="presentation"><a href="#">Servers</a></li>-->
-<!--                <li role="presentation"><a href="#">Users</a></li>-->
-<!--            </ul>-->
-<!--        </div>-->
-<!--    </div>-->
-
-<!--    <div class="row">-->
-<!--        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">-->
-<!--&lt;!&ndash;            <intro-home-routing></intro-home-routing>&ndash;&gt;-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="row">-->
-<!--        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">-->
-<!--&lt;!&ndash;            <intro-users-routing></intro-users-routing>&ndash;&gt;-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="row">-->
-<!--        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">-->
-<!--&lt;!&ndash;            <intro-servers-routing></intro-servers-routing>&ndash;&gt;-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
-<nav class="navbar navbar-expand-sm navbar-light" style="background: #dea8a8;">
+<nav class="navbar navbar-expand-sm navbar-light" style="background: #f8c3c3;">
     <div class="container">
-        <a routerLink="/" class="navbar-brand">Home</a>
+        <a routerLink="/" class="navbar-brand text-uppercase">Routing</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -37,29 +8,27 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li role="presentation" class="active"><a href="#">Home</a></li>
-                <li role="presentation"><a href="#">Servers</a></li>
-                <li role="presentation"><a href="#">Users</a></li>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-3">
+                <li role="presentation" class="nav-item">
+                    <a class="nav-link text-uppercase" routerLink="/"
+                       routerLinkActive="active-routing" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+                </li>
+                <li role="presentation" class="nav-item" routerLinkActive="active-routing">
+                    <a class="nav-link text-uppercase" routerLink="/servers"
+                       routerLinkActive="active-routing">Servers</a>
+                </li>
+                <li role="presentation" class="nav-item" routerLinkActive="active-routing">
+                    <a class="nav-link text-uppercase" [routerLink]="['users']"
+                       routerLinkActive="active-routing">Users</a>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
-<div class="container">
+<div class="container mt-3">
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-            <intro-home-routing></intro-home-routing>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-            <intro-users-routing></intro-users-routing>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-            <!--                        <intro-servers-routing></intro-servers-routing>-->
+            <router-outlet></router-outlet>
         </div>
     </div>
 </div>
-
