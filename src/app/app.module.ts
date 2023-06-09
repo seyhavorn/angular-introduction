@@ -42,6 +42,10 @@ import {
 } from './Routing/servers-routing/edit-server-routing/edit-server-routing.component';
 import { ServersRouteingService } from "./Routing/servers-routing/servers-routing.service";
 import { PageNotFoundComponent } from './Routing/page-not-found/page-not-found.component';
+import { AuthService } from './Routing/Auth.service';
+import { AuthGuard } from './Routing/auth-guard.service';
+import { CanDeactivateGuard } from './Routing/can-deactive-guard.service';
+import { ErrorPageComponent } from './Routing/error-page/error-page.component';
 
 @NgModule({
 	declarations: [
@@ -76,7 +80,8 @@ import { PageNotFoundComponent } from './Routing/page-not-found/page-not-found.c
 		MenuRoutingComponent,
 		ServerRoutingComponent,
 		EditServerRoutingComponent,
-  PageNotFoundComponent
+		PageNotFoundComponent,
+  ErrorPageComponent
 	],
 	imports: [
 		BrowserModule,
@@ -90,7 +95,10 @@ import { PageNotFoundComponent } from './Routing/page-not-found/page-not-found.c
 		UserService,
 		CounterService,
 		ShoppingListService,
-		ServersRouteingService
+		ServersRouteingService,
+    AuthService,
+    AuthGuard,
+    CanDeactivateGuard
 	],
 	bootstrap: [AppComponent],
 })
