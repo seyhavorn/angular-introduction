@@ -22,85 +22,84 @@ import { AccountComponent } from './serviceDependency/account/account.component'
 import { NewAccountComponent } from './serviceDependency/new-account/new-account.component';
 import { ServerModuleComponent } from './serviceDependency/server-module/server-module.component';
 import { LoginService } from './serviceDependency/services/loginService';
-import { CardComponent } from "./data-binding/card/card.component";
-import { ContentComponent } from "./data-binding/content/content.component";
-import { AdHostDirective } from "./data-binding/adHost.directive";
+import { CardComponent } from './data-binding/card/card.component';
+import { ContentComponent } from './data-binding/content/content.component';
+import { AdHostDirective } from './data-binding/adHost.directive';
 import { UserActiveComponent } from './serviceDependency/User/user-active/user-active.component';
 import { UserInactiveComponent } from './serviceDependency/User/user-inactive/user-inactive.component';
 import { UserComponent } from './serviceDependency/User/user/user.component';
-import { UserService } from "./serviceDependency/User/user.service";
-import { CounterService } from "./serviceDependency/User/counter.service";
-import { ShoppingListService } from "./project/Services/shopping-list.service";
+import { UserService } from './serviceDependency/User/user.service';
+import { CounterService } from './serviceDependency/User/counter.service';
+import { ShoppingListService } from './project/Services/shopping-list.service';
 import { UsersRoutingComponent } from './Routing/users-routing/users-routing.component';
 import { UserRoutingComponent } from './Routing/users-routing/user-routing/user-routing.component';
 import { ServersRoutingComponent } from './Routing/servers-routing/servers-routing.component';
 import { HomeRoutingComponent } from './Routing/home-routing/home-routing.component';
 import { MenuRoutingComponent } from './Routing/menu-routing/menu-routing.component';
 import { ServerRoutingComponent } from './Routing/servers-routing/server-routing/server-routing.component';
-import {
-	EditServerRoutingComponent
-} from './Routing/servers-routing/edit-server-routing/edit-server-routing.component';
-import { ServersRouteingService } from "./Routing/servers-routing/servers-routing.service";
+import { EditServerRoutingComponent } from './Routing/servers-routing/edit-server-routing/edit-server-routing.component';
+import { ServersRouteingService } from './Routing/servers-routing/servers-routing.service';
 import { PageNotFoundComponent } from './Routing/page-not-found/page-not-found.component';
 import { AuthService } from './Routing/Auth.service';
 import { AuthGuard } from './Routing/auth-guard.service';
 import { CanDeactivateGuard } from './Routing/can-deactive-guard.service';
 import { ErrorPageComponent } from './Routing/error-page/error-page.component';
+import { ServerRoutingResolver } from './Routing/servers-routing/server-routing/server-routing-resolver.service';
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		MenuComponent,
-		RecipesComponent,
-		RecipeListComponent,
-		RecipeDetailComponent,
-		RecipeItemComponent,
-		ShoppingListComponent,
-		ShoppingEditComponent,
-		DirectiveModulesComponent,
-		BasicHighlightDirective,
-		BetterHightlighDirective,
-		DatabindingModulesComponent,
-		ChildComponent,
-		UnlessDirective,
-		DropdownDirective,
-		AccountComponent,
-		NewAccountComponent,
-		ServerModuleComponent,
-		CardComponent,
-		ContentComponent,
-		AdHostDirective,
-		UserActiveComponent,
-		UserInactiveComponent,
-		UserComponent,
-		UsersRoutingComponent,
-		UserRoutingComponent,
-		ServersRoutingComponent,
-		HomeRoutingComponent,
-		MenuRoutingComponent,
-		ServerRoutingComponent,
-		EditServerRoutingComponent,
-		PageNotFoundComponent,
-  ErrorPageComponent
-	],
-	imports: [
-		BrowserModule,
-		AppRoutingModule,
-		HttpClientModule,
-		ReactiveFormsModule,
-		FormsModule
-	],
-	providers: [
-		LoginService,
-		UserService,
-		CounterService,
-		ShoppingListService,
-		ServersRouteingService,
+  declarations: [
+    AppComponent,
+    MenuComponent,
+    RecipesComponent,
+    RecipeListComponent,
+    RecipeDetailComponent,
+    RecipeItemComponent,
+    ShoppingListComponent,
+    ShoppingEditComponent,
+    DirectiveModulesComponent,
+    BasicHighlightDirective,
+    BetterHightlighDirective,
+    DatabindingModulesComponent,
+    ChildComponent,
+    UnlessDirective,
+    DropdownDirective,
+    AccountComponent,
+    NewAccountComponent,
+    ServerModuleComponent,
+    CardComponent,
+    ContentComponent,
+    AdHostDirective,
+    UserActiveComponent,
+    UserInactiveComponent,
+    UserComponent,
+    UsersRoutingComponent,
+    UserRoutingComponent,
+    ServersRoutingComponent,
+    HomeRoutingComponent,
+    MenuRoutingComponent,
+    ServerRoutingComponent,
+    EditServerRoutingComponent,
+    PageNotFoundComponent,
+    ErrorPageComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+  ],
+  providers: [
+    LoginService,
+    UserService,
+    CounterService,
+    ShoppingListService,
+    ServersRouteingService,
     AuthService,
     AuthGuard,
-    CanDeactivateGuard
-	],
-	bootstrap: [AppComponent],
+    CanDeactivateGuard,
+    ServerRoutingResolver,
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}
