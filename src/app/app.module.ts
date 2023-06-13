@@ -47,6 +47,9 @@ import { ErrorPageComponent } from './Routing/error-page/error-page.component';
 import { ServerRoutingResolver } from './Routing/servers-routing/server-routing/server-routing-resolver.service';
 import { RecipeStartComponent } from './project/recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './project/recipes/recipe-edit/recipe-edit.component';
+import { ObserComponent } from './Observables/obser/obser.component';
+import { ObserHomeComponent } from './Observables/obser-home/obser-home.component';
+import { ObserUserComponent } from './Observables/obser-user/obser-user.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +88,9 @@ import { RecipeEditComponent } from './project/recipes/recipe-edit/recipe-edit.c
     ErrorPageComponent,
     RecipeStartComponent,
     RecipeEditComponent,
+    ObserComponent,
+    ObserHomeComponent,
+    ObserUserComponent,
   ],
   imports: [
     BrowserModule,
