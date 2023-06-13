@@ -45,6 +45,8 @@ import { AuthGuard } from './Routing/auth-guard.service';
 import { CanDeactivateGuard } from './Routing/can-deactive-guard.service';
 import { ErrorPageComponent } from './Routing/error-page/error-page.component';
 import { ServerRoutingResolver } from './Routing/servers-routing/server-routing/server-routing-resolver.service';
+import { RecipeStartComponent } from './project/recipes/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './project/recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +83,8 @@ import { ServerRoutingResolver } from './Routing/servers-routing/server-routing/
     EditServerRoutingComponent,
     PageNotFoundComponent,
     ErrorPageComponent,
+    RecipeStartComponent,
+    RecipeEditComponent,
   ],
   imports: [
     BrowserModule,
