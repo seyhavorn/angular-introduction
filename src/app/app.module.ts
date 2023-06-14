@@ -50,6 +50,9 @@ import { RecipeEditComponent } from './project/recipes/recipe-edit/recipe-edit.c
 import { ObserComponent } from './Observables/obser/obser.component';
 import { ObserHomeComponent } from './Observables/obser-home/obser-home.component';
 import { ObserUserComponent } from './Observables/obser-user/obser-user.component';
+import { FormComponent } from './form/form/form.component';
+import { AppFormComponent } from './form/app-form/app-form.component';
+import { FormTdExComponent } from './form/form-td-ex/form-td-ex.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +94,9 @@ import { ObserUserComponent } from './Observables/obser-user/obser-user.componen
     ObserComponent,
     ObserHomeComponent,
     ObserUserComponent,
+    FormComponent,
+    AppFormComponent,
+    FormTdExComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,6 +104,7 @@ import { ObserUserComponent } from './Observables/obser-user/obser-user.componen
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [
     LoginService,
