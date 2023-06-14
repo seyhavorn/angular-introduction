@@ -53,6 +53,7 @@ import { ObserUserComponent } from './Observables/obser-user/obser-user.componen
 import { FormComponent } from './form/form/form.component';
 import { AppFormComponent } from './form/app-form/app-form.component';
 import { FormTdExComponent } from './form/form-td-ex/form-td-ex.component';
+import { ReactiveFormComponent } from './form/reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import { FormTdExComponent } from './form/form-td-ex/form-td-ex.component';
     FormComponent,
     AppFormComponent,
     FormTdExComponent,
+    ReactiveFormComponent,
   ],
   imports: [
     BrowserModule,
