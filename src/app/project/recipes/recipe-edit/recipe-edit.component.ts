@@ -40,8 +40,32 @@ export class RecipeEditComponent implements OnInit {
 
     this.recipeForm = new FormGroup({
       name: new FormControl(recipeName),
-      iamgePath: new FormControl(recipeImagePath),
+      imagePath: new FormControl(recipeImagePath),
       description: new FormControl(recipeDescription),
     });
   }
+
+  onSubmit() {
+    console.log(this.recipeForm);
+  }
 }
+/*
+  1. Directive Deep Dive
+  2. Dependenct injection & Service
+  3.Routing:
+    - Navigate to another component,
+    - Active route,
+    - Child Route,
+    - Parent Route,
+    - Passing param to links
+    - Active route
+  5.Understanding Observable:
+  6. Form:
+    - Template-Driven (TD)
+    - Reactive Form.
+    - How to validate data in form
+    - Form Array
+    - Form Control
+    - Form Group
+    - Display message when Error.
+*/
