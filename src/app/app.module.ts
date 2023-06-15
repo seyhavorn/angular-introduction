@@ -54,11 +54,14 @@ import { FormComponent } from './form/form/form.component';
 import { AppFormComponent } from './form/app-form/app-form.component';
 import { FormTdExComponent } from './form/form-td-ex/form-td-ex.component';
 import { ReactiveFormComponent } from './form/reactive-form/reactive-form.component';
+import { ReactiveFormExComponent } from './form/reactive-form-ex/reactive-form-ex.component';
+import { ProjectModulesComponent } from './project/project-modules/project-modules.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
+    ProjectModulesComponent,
     RecipesComponent,
     RecipeListComponent,
     RecipeDetailComponent,
@@ -99,6 +102,7 @@ import { ReactiveFormComponent } from './form/reactive-form/reactive-form.compon
     AppFormComponent,
     FormTdExComponent,
     ReactiveFormComponent,
+    ReactiveFormExComponent,
   ],
   imports: [
     BrowserModule,

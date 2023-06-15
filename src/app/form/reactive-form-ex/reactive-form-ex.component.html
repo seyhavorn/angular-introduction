@@ -1,0 +1,39 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+          <div class="form-group mb-3">
+            <button class="btn btn-sm btn">Add Project Name</button>
+          </div>
+          <div>
+            <div class="form-group mb-4">
+              <label for="username">ProjectName</label>
+              <input type="text" id="name" formControlName="name" class="form-control"/>
+              <span *ngIf="!signupForm.get('name')?.valid && signupForm.get('name')?.touched" class="help-block text-danger">
+                This project name  is required!
+              </span>
+            </div>
+
+            <div class="form-group mb-4">
+              <label for="email">Email</label>
+              <input type="text" id="email" class="form-control" formControlName="email"/>
+              <span *ngIf="!signupForm.get('email')?.valid && signupForm.get('email')?.touched" class="help-block text-danger">Please enter a valid email</span>
+            </div>
+
+            <div class="form-grou mb-3 mt-3">
+              <label for="status">Please Select Project status:</label>
+              <select id="status" class="form-control" [ngModel]="defualtStatus" name="status" formControlName="status">
+                <option value="stable">Stable</option>
+                <option value="critical">Critical</option>
+                <option value="fiished">Finished</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary mt-4" [disabled]="!signupForm.valid" type="submit">Submit</button>
+        </form>
+      </form>
+    </div>
+  </div>
+</div>
