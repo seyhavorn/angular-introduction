@@ -56,11 +56,16 @@ import { FormTdExComponent } from './form/form-td-ex/form-td-ex.component';
 import { ReactiveFormComponent } from './form/reactive-form/reactive-form.component';
 import { ReactiveFormExComponent } from './form/reactive-form-ex/reactive-form-ex.component';
 import { ProjectModulesComponent } from './project/project-modules/project-modules.component';
+import { AppPipesComponent } from './pipes/app-pipes/app-pipes.component';
+import { ShortenPipe } from './pipes/pipes/shorten.pipe';
+import { FilterPipe } from './pipes/pipes/filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
+    ShortenPipe,
+    FilterPipe,
     ProjectModulesComponent,
     RecipesComponent,
     RecipeListComponent,
@@ -103,6 +108,7 @@ import { ProjectModulesComponent } from './project/project-modules/project-modul
     FormTdExComponent,
     ReactiveFormComponent,
     ReactiveFormExComponent,
+    AppPipesComponent,
   ],
   imports: [
     BrowserModule,
