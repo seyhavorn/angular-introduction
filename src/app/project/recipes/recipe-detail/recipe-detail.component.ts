@@ -10,7 +10,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 })
 export class RecipeDetailComponent implements OnInit {
   recipe?: RecipeModel;
-  id?: number;
+  id!: number;
 
   constructor(
     private recipeService: RecipeService,
@@ -34,5 +34,10 @@ export class RecipeDetailComponent implements OnInit {
     this.router.navigate(['edit'], { relativeTo: this.route });
     // it mean back ../ to parent router:
     // this.router.navigate(['../', this.id, 'edit'], { relativeTo: this.route });
+  }
+
+  onDeleteRecipe() {
+    this.recipeService.deleteRecipe(this.id);
+    this.router.navigate(['/recipes']);
   }
 }
