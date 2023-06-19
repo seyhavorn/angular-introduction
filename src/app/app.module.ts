@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './project/menu/menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RecipesComponent } from './project/recipes/recipes.component';
@@ -59,6 +59,11 @@ import { ProjectModulesComponent } from './project/project-modules/project-modul
 import { AppPipesComponent } from './pipes/app-pipes/app-pipes.component';
 import { ShortenPipe } from './pipes/pipes/shorten.pipe';
 import { FilterPipe } from './pipes/pipes/filter.pipe';
+import { AppHttpComponent } from './http/app-http/app-http.component';
+import { HttpRequestComponent } from './http/http-request/http-request.component';
+import { AuthInterceptorService } from './http/http-service/auth-interceptor.service';
+import { LoginInterceptorService } from './http/http-service/login-interceptor.service';
+import { DataStorageService } from './project/Services/data-storage.service';
 
 @NgModule({
   declarations: [
@@ -109,14 +114,16 @@ import { FilterPipe } from './pipes/pipes/filter.pipe';
     ReactiveFormComponent,
     ReactiveFormExComponent,
     AppPipesComponent,
+    AppHttpComponent,
+    HttpRequestComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule,
   ],
   providers: [
     LoginService,
@@ -128,6 +135,17 @@ import { FilterPipe } from './pipes/pipes/filter.pipe';
     AuthGuard,
     CanDeactivateGuard,
     ServerRoutingResolver,
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: LoginInterceptorService,
+    //   multi: true,
+    // },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: AuthInterceptorService,
+    //   multi: true,
+    // },
+    DataStorageService,
   ],
   bootstrap: [AppComponent],
 })

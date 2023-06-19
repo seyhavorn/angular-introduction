@@ -26,7 +26,7 @@ export class CardComponent implements OnInit {
     localStorage.removeItem('cardItem');
     this.cardContent.emit(card);
     if (!localStorage.getItem('cardItem')) {
-      localStorage.setItem('cardItem', JSON.stringify(card));
+      // localStorage.setItem('cardItem', JSON.stringify(card));
     }
   }
 }
