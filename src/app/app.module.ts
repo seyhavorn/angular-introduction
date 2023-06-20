@@ -61,10 +61,10 @@ import { ShortenPipe } from './pipes/pipes/shorten.pipe';
 import { FilterPipe } from './pipes/pipes/filter.pipe';
 import { AppHttpComponent } from './http/app-http/app-http.component';
 import { HttpRequestComponent } from './http/http-request/http-request.component';
-import { AuthInterceptorService } from './http/http-service/auth-interceptor.service';
-import { LoginInterceptorService } from './http/http-service/login-interceptor.service';
-import { DataStorageService } from './project/Services/data-storage.service';
 import { RecipeService } from './project/Services/recipe.service';
+import { ProjectAuthComponent } from './project/project-auth/project-auth.component';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
   declarations: [
@@ -117,6 +117,7 @@ import { RecipeService } from './project/Services/recipe.service';
     AppPipesComponent,
     AppHttpComponent,
     HttpRequestComponent,
+    ProjectAuthComponent,
   ],
   imports: [
     BrowserModule,
@@ -125,6 +126,7 @@ import { RecipeService } from './project/Services/recipe.service';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfigProject),
   ],
   providers: [
     LoginService,

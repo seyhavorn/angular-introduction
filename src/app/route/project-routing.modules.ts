@@ -5,6 +5,7 @@ import { RecipeStartComponent } from '../project/recipes/recipe-start/recipe-sta
 import { RecipeDetailComponent } from '../project/recipes/recipe-detail/recipe-detail.component';
 import { RecipeEditComponent } from '../project/recipes/recipe-edit/recipe-edit.component';
 import { RecipesResolverService } from '../project/Services/recipes-resolver.service';
+import { ProjectAuthComponent } from '../project/project-auth/project-auth.component';
 
 export const projectRoute: Route[] = [
   {
@@ -43,4 +44,8 @@ export const projectRoute: Route[] = [
     path: 'recipes-d',
     component: RecipesComponent,
   },
+  {
+    path: 'auth',
+    component: ProjectAuthComponent
+  }
 ];

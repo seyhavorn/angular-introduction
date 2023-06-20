@@ -8,7 +8,7 @@ import { RecipeModel } from '../Model/recipe.model';
 
 @Injectable({ providedIn: 'root' })
 export class DataStorageService {
-  baseUrlProject = environment.baseUrlProject + 'recipe.json';
+  baseUrlProject = environment.firebaseConfigProject.databaseURL + 'recipe.json';
 
   constructor(private http: HttpClient, private recipeService: RecipeService) {}
 
