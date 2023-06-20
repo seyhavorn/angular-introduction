@@ -64,6 +64,7 @@ import { HttpRequestComponent } from './http/http-request/http-request.component
 import { AuthInterceptorService } from './http/http-service/auth-interceptor.service';
 import { LoginInterceptorService } from './http/http-service/login-interceptor.service';
 import { DataStorageService } from './project/Services/data-storage.service';
+import { RecipeService } from './project/Services/recipe.service';
 
 @NgModule({
   declarations: [
@@ -135,6 +136,7 @@ import { DataStorageService } from './project/Services/data-storage.service';
     AuthGuard,
     CanDeactivateGuard,
     ServerRoutingResolver,
+    RecipeService,
     // {
     //   provide: HTTP_INTERCEPTORS,
     //   useClass: LoginInterceptorService,
@@ -145,7 +147,7 @@ import { DataStorageService } from './project/Services/data-storage.service';
     //   useClass: AuthInterceptorService,
     //   multi: true,
     // },
-    DataStorageService,
+    // DataStorageService,
   ],
   bootstrap: [AppComponent],
 })

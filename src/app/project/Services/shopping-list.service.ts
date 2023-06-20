@@ -1,4 +1,3 @@
-import { EventEmitter } from '@angular/core';
 import { IngredientModel } from '../shared/ingredient.model';
 import { Subject } from 'rxjs';
 
