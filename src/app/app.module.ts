@@ -65,6 +65,7 @@ import { RecipeService } from './project/Services/recipe.service';
 import { ProjectAuthComponent } from './project/project-auth/project-auth.component';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
+import { LoadingSpinnerComponent } from './project/shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -118,6 +119,7 @@ import { AngularFireModule } from '@angular/fire/compat';
     AppHttpComponent,
     HttpRequestComponent,
     ProjectAuthComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,

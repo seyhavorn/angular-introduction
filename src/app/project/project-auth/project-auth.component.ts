@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ProjectAuthService } from '../Services/project-auth.service';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import {
+  AuthResponseData,
+  ProjectAuthService,
+} from '../Services/project-auth.service';
 
 @Component({
   selector: 'intro-project-auth',
@@ -9,8 +14,13 @@ import { ProjectAuthService } from '../Services/project-auth.service';
 })
 export class ProjectAuthComponent implements OnInit {
   isLoginMode: boolean = true;
+  isLoading: boolean = false;
+  error: string = '';
 
-  constructor(private projectAuthService: ProjectAuthService) {}
+  constructor(
+    private projectAuthService: ProjectAuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
 
@@ -22,29 +32,32 @@ export class ProjectAuthComponent implements OnInit {
     if (!form.valid) {
       return;
     }
+
     const email = form.value.email;
     const password = form.value.password;
 
+    let authObs: Observable<AuthResponseData>;
+    this.isLoading = true;
+
     if (this.isLoginMode) {
-      this.projectAuthService.signup(email, password).subscribe(
-        (resData) => {
-          console.log('after sig Up');
-        },
-        (error) => {
-          console.log('error after sigUp', error);
-        }
-      );
+      this.isLoginMode = true;
+      authObs = this.projectAuthService.login(email, password);
     } else {
-      this.projectAuthService.signup(email, password).subscribe(
-        (resData) => {
-          console.log('after sig Up');
-        },
-        (error) => {
-          console.log('error after sigUp', error);
-        }
-      );
+      authObs = this.projectAuthService.signup(email, password);
     }
 
+    authObs.subscribe(
+      (resData) => {
+        console.log('data successfully', resData);
+        this.isLoading = false;
+        this.router.navigate(['/recipes']);
+      },
+      (errorMessage) => {
+        console.log('message that error when do action', errorMessage);
+        this.error = errorMessage;
+        this.isLoading = false;
+      }
+    );
     form.reset();
   }
 }

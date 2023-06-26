@@ -6,7 +6,6 @@ import {
   RouterStateSnapshot,
 } from '@angular/router';
 import { RecipeModel } from '../Model/recipe.model';
-import { Observable } from 'rxjs';
 import { RecipeService } from './recipe.service';
 
 @Injectable({ providedIn: 'root' })
