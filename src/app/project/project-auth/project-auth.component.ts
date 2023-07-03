@@ -48,7 +48,7 @@ export class ProjectAuthComponent implements OnInit {
 
     authObs.subscribe(
       (resData) => {
-        console.log('data successfully', resData);
+        console.log('data successfully for login and sigup', resData);
         this.isLoading = false;
         this.router.navigate(['/recipes']);
       },

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map, tap } from 'rxjs/operators';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { exhaustMap, map, take, tap } from 'rxjs/operators';
 
 import { RecipeService } from './recipe.service';
 import { environment } from './../../../environments/environment';
@@ -27,8 +27,19 @@ export class DataStorageService {
     });
   }
 
-  fetchRecipes() {
-    return this.http.get<RecipeModel[]>(this.baseUrlProject).pipe(
+  fetchRecipes(): void {
+    this.authService.user
+    .pipe(
+      take(1),
+      exhaustMap((user) => {
+        console.log('use', user);
+
+        return this.http.get<RecipeModel[]>(this.baseUrlProject,
+          {
+            params: new HttpParams().set('auth', user.token)
+          }
+          );
+      }),
       map((recipes) => {
         return recipes.map((recipe) => {
           return {
@@ -41,6 +52,21 @@ export class DataStorageService {
         this.recipeService.setRecipes(recipes);
       })
     );
+
+    // .pipe(
+    //   map((recipes) => {
+    //     return recipes.map((recipe) => {
+    //       return {
+    //         ...recipe,
+    //         ingredients: recipe.ingredients ? recipe.ingredients : [],
+    //       };
+    //     });
+    //   }),
+    //   tap((recipes) => {
+    //     this.recipeService.setRecipes(recipes);
+    //   })
+    // );
+
     // .subscribe(recipes => {
     //   console.log('recipes fetching', recipes);
 

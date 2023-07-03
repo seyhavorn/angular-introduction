@@ -22,8 +22,8 @@ export class MenuComponent implements OnInit, OnDestroy {
       // this.isAuthenticated = !user ? false : true;
       // is the same way for this!
       this.isAuthenticated = !!user;
-      console.log('!user', !user);
-      console.log('!!user', !!user);
+      // console.log('!user', !user);
+      // console.log('!!user', !!user);
 
     });
   }
@@ -33,7 +33,7 @@ export class MenuComponent implements OnInit, OnDestroy {
   }
 
   onFetchData() {
-    this.dataStorageService.fetchRecipes().subscribe();
+    this.dataStorageService.fetchRecipes();
   }
 
   ngOnDestroy(): void {

@@ -5,7 +5,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { DataStorageService } from '../../Services/data-storage.service';
 
-
 @Component({
   selector: 'intro-recipe-list',
   templateUrl: './recipe-list.component.html',
@@ -24,7 +23,6 @@ export class RecipeListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.sub = this.recipeService.recipesChanged.subscribe((recipes: RecipeModel[]) => {
-      console.log('from list', recipes);
       this.recipes = recipes;
     });
 
