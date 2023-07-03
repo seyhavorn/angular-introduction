@@ -9,22 +9,22 @@ import { ShoppingListService } from './shopping-list.service';
 export class RecipeService {
   recipesChanged = new Subject<RecipeModel[]>();
 
-  private recipes: RecipeModel[] = [
-    new RecipeModel(
-      'A Test Recipe',
-      'This is simply a test',
-      'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
-      [new IngredientModel('Meat', 1), new IngredientModel('French Fries', 12)]
-    ),
-    new RecipeModel(
-      'Another Test Recipe',
-      'This is simply a test',
-      'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
-      [new IngredientModel('Buns', 2), new IngredientModel('Meats', 12)]
-    ),
-  ];
+  // private recipes: RecipeModel[] = [
+  //   new RecipeModel(
+  //     'A Test Recipe',
+  //     'This is simply a test',
+  //     'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
+  //     [new IngredientModel('Meat', 1), new IngredientModel('French Fries', 12)]
+  //   ),
+  //   new RecipeModel(
+  //     'Another Test Recipe',
+  //     'This is simply a test',
+  //     'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
+  //     [new IngredientModel('Buns', 2), new IngredientModel('Meats', 12)]
+  //   ),
+  // ];
 
-  // private recipes: RecipeModel[] = [];
+  private recipes: RecipeModel[] = [];
 
   constructor(private slService: ShoppingListService) {}
 

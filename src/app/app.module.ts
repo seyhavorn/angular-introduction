@@ -66,6 +66,7 @@ import { ProjectAuthComponent } from './project/project-auth/project-auth.compon
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { LoadingSpinnerComponent } from './project/shared/loading-spinner/loading-spinner.component';
+import { AuthInterceptorService } from './project/Services/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -119,7 +120,7 @@ import { LoadingSpinnerComponent } from './project/shared/loading-spinner/loadin
     AppHttpComponent,
     HttpRequestComponent,
     ProjectAuthComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -152,6 +153,11 @@ import { LoadingSpinnerComponent } from './project/shared/loading-spinner/loadin
     //   multi: true,
     // },
     // DataStorageService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
 })

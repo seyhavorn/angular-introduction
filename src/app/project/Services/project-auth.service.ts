@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { environment } from './../../../environments/environment';
 import { BehaviorSubject, Subject, catchError, tap, throwError } from 'rxjs';
 import { User } from '../Model/user.model';
+import { Router } from '@angular/router';
 
 export interface AuthResponseData {
   kind: string;
@@ -19,11 +20,15 @@ export interface AuthResponseData {
 export class ProjectAuthService {
   // user = new Subject<User>();
   // not working with null
-  user = new BehaviorSubject<any>(null);
+  user = new BehaviorSubject<any>(undefined);
   // user!: BehaviorSubject<User>;
   env = environment.firebaseConfigProject;
 
-  constructor(private http: HttpClient, private auth: AngularFireAuth) {}
+  constructor(
+    private http: HttpClient,
+    private auth: AngularFireAuth,
+    private router: Router
+  ) {}
 
   signup(email: string, password: string) {
     return this.http
@@ -73,6 +78,41 @@ export class ProjectAuthService {
       );
   }
 
+  autoLogin() {
+    const userDataString = localStorage.getItem('userData');
+
+    if(!userDataString) {
+      return;
+    }
+
+    const userData: {
+      email: string;
+      id: string;
+      _token: string;
+      _tokenExpirationDate: string;
+    } = JSON.parse(userDataString);
+    const loadedUser = new User(
+      userData.email,
+      userData.id,
+      userData._token,
+      new Date(userData._tokenExpirationDate)
+    );
+
+    if(loadedUser.token ) {
+      this.user.next(loadedUser);
+      const expirationDuration =
+        new Date(userData._tokenExpirationDate).getTime() -
+        new Date().getTime();
+      this.autoLogin(expirationDuration);
+    }
+
+  }
+
+  logout() {
+    this.user.next(null);
+    this.router.navigate(['/auth']);
+  }
+
   private handleAuthentication(
     email: string,
     userId: string,
@@ -82,6 +122,7 @@ export class ProjectAuthService {
     const expiraionDate = new Date(new Date().getTime() + expiresIn * 1000);
     const user = new User(email, userId, token, expiraionDate);
     this.user.next(user);
+    localStorage.setItem('userData', JSON.stringify(user));
   }
 
   private handleError(errorRes: HttpErrorResponse) {
