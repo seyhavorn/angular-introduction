@@ -6,6 +6,7 @@ import { RecipeDetailComponent } from '../project/recipes/recipe-detail/recipe-d
 import { RecipeEditComponent } from '../project/recipes/recipe-edit/recipe-edit.component';
 import { RecipesResolverService } from '../project/Services/recipes-resolver.service';
 import { ProjectAuthComponent } from '../project/project-auth/project-auth.component';
+import { AuthGuard } from '../project/Services/project-auth.guard';
 
 export const projectRoute: Route[] = [
   {
@@ -16,6 +17,7 @@ export const projectRoute: Route[] = [
   {
     path: 'recipes',
     component: RecipesComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
