@@ -67,6 +67,8 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { LoadingSpinnerComponent } from './project/shared/loading-spinner/loading-spinner.component';
 import { AuthInterceptorService } from './project/Services/auth-interceptor.service';
+import { AlertComponent } from './project/shared/alert/alert.component';
+import { PlaceHolderDirective } from './project/shared/placeholder.directive';
 
 @NgModule({
   declarations: [
@@ -121,6 +123,8 @@ import { AuthInterceptorService } from './project/Services/auth-interceptor.serv
     HttpRequestComponent,
     ProjectAuthComponent,
     LoadingSpinnerComponent,
+    AlertComponent,
+    PlaceHolderDirective,
   ],
   imports: [
     BrowserModule,
@@ -160,5 +164,8 @@ import { AuthInterceptorService } from './project/Services/auth-interceptor.serv
     },
   ],
   bootstrap: [AppComponent],
+  entryComponents: [
+    AlertComponent
+  ]
 })
 export class AppModule {}

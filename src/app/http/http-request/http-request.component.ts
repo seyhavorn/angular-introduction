@@ -58,7 +58,7 @@ export class HttpRequestComponent implements OnInit, OnDestroy {
   }
 
   onHandleError() {
-    console.log('here');
+    // console.log('here');
   }
 
   ngOnDestroy(): void {
