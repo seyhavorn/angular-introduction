@@ -43,10 +43,6 @@ export const routes: Route[] = [
       },
     ],
   },
-  // {
-  //   path: 'not-found',
-  //   component: PageNotFoundComponent,
-  // },
   {
     path: 'not-found',
     component: ErrorPageComponent,

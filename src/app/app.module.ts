@@ -2,22 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './project/menu/menu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RecipesComponent } from './project/recipes/recipes.component';
-import { RecipeListComponent } from './project/recipes/recipe-list/recipe-list.component';
-import { RecipeDetailComponent } from './project/recipes/recipe-detail/recipe-detail.component';
-import { RecipeItemComponent } from './project/recipes/recipe-list/recipe-item/recipe-item.component';
-import { ShoppingListComponent } from './project/shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './project/shopping-list/shopping-edit/shopping-edit.component';
 import { BasicHighlightDirective } from './directive/basic-highlight/basic-highlight.directive';
 import { BetterHightlighDirective } from './directive/better-highlight/better-hightligh.directive';
 import { DirectiveModulesComponent } from './directive/directive-modules.component';
 import { DatabindingModulesComponent } from './data-binding/databinding-modules.component';
 import { ChildComponent } from './data-binding/child/child.component';
 import { UnlessDirective } from './directive/unless.directive';
-import { DropdownDirective } from './project/shared/dropdown.directive';
 import { AccountComponent } from './serviceDependency/account/account.component';
 import { NewAccountComponent } from './serviceDependency/new-account/new-account.component';
 import { ServerModuleComponent } from './serviceDependency/server-module/server-module.component';
@@ -30,7 +23,6 @@ import { UserInactiveComponent } from './serviceDependency/User/user-inactive/us
 import { UserComponent } from './serviceDependency/User/user/user.component';
 import { UserService } from './serviceDependency/User/user.service';
 import { CounterService } from './serviceDependency/User/counter.service';
-import { ShoppingListService } from './project/Services/shopping-list.service';
 import { UsersRoutingComponent } from './Routing/users-routing/users-routing.component';
 import { UserRoutingComponent } from './Routing/users-routing/user-routing/user-routing.component';
 import { ServersRoutingComponent } from './Routing/servers-routing/servers-routing.component';
@@ -45,8 +37,6 @@ import { AuthGuard } from './Routing/auth-guard.service';
 import { CanDeactivateGuard } from './Routing/can-deactive-guard.service';
 import { ErrorPageComponent } from './Routing/error-page/error-page.component';
 import { ServerRoutingResolver } from './Routing/servers-routing/server-routing/server-routing-resolver.service';
-import { RecipeStartComponent } from './project/recipes/recipe-start/recipe-start.component';
-import { RecipeEditComponent } from './project/recipes/recipe-edit/recipe-edit.component';
 import { ObserComponent } from './Observables/obser/obser.component';
 import { ObserHomeComponent } from './Observables/obser-home/obser-home.component';
 import { ObserUserComponent } from './Observables/obser-user/obser-user.component';
@@ -61,14 +51,12 @@ import { ShortenPipe } from './pipes/pipes/shorten.pipe';
 import { FilterPipe } from './pipes/pipes/filter.pipe';
 import { AppHttpComponent } from './http/app-http/app-http.component';
 import { HttpRequestComponent } from './http/http-request/http-request.component';
-import { RecipeService } from './project/Services/recipe.service';
-import { ProjectAuthComponent } from './project/project-auth/project-auth.component';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
-import { LoadingSpinnerComponent } from './project/shared/loading-spinner/loading-spinner.component';
-import { AuthInterceptorService } from './project/Services/auth-interceptor.service';
-import { AlertComponent } from './project/shared/alert/alert.component';
-import { PlaceHolderDirective } from './project/shared/placeholder.directive';
+import { ShoppingListModule } from './project/shopping-list/shopping-list.module';
+import { SharedModule } from './project/shared/shared.module';
+import { CoreModules } from './core.module';
+import { AuthModule } from './project/project-auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -77,19 +65,12 @@ import { PlaceHolderDirective } from './project/shared/placeholder.directive';
     ShortenPipe,
     FilterPipe,
     ProjectModulesComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
     DirectiveModulesComponent,
     BasicHighlightDirective,
     BetterHightlighDirective,
     DatabindingModulesComponent,
     ChildComponent,
     UnlessDirective,
-    DropdownDirective,
     AccountComponent,
     NewAccountComponent,
     ServerModuleComponent,
@@ -108,8 +89,6 @@ import { PlaceHolderDirective } from './project/shared/placeholder.directive';
     EditServerRoutingComponent,
     PageNotFoundComponent,
     ErrorPageComponent,
-    RecipeStartComponent,
-    RecipeEditComponent,
     ObserComponent,
     ObserHomeComponent,
     ObserUserComponent,
@@ -121,10 +100,6 @@ import { PlaceHolderDirective } from './project/shared/placeholder.directive';
     AppPipesComponent,
     AppHttpComponent,
     HttpRequestComponent,
-    ProjectAuthComponent,
-    LoadingSpinnerComponent,
-    AlertComponent,
-    PlaceHolderDirective,
   ],
   imports: [
     BrowserModule,
@@ -134,18 +109,20 @@ import { PlaceHolderDirective } from './project/shared/placeholder.directive';
     ReactiveFormsModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfigProject),
+    ShoppingListModule,
+    AuthModule,
+    SharedModule,
+    CoreModules,
   ],
   providers: [
     LoginService,
     UserService,
     CounterService,
-    ShoppingListService,
     ServersRouteingService,
     AuthService,
     AuthGuard,
     CanDeactivateGuard,
     ServerRoutingResolver,
-    RecipeService,
     // {
     //   provide: HTTP_INTERCEPTORS,
     //   useClass: LoginInterceptorService,
@@ -157,15 +134,7 @@ import { PlaceHolderDirective } from './project/shared/placeholder.directive';
     //   multi: true,
     // },
     // DataStorageService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptorService,
-      multi: true,
-    },
   ],
   bootstrap: [AppComponent],
-  entryComponents: [
-    AlertComponent
-  ]
 })
 export class AppModule {}

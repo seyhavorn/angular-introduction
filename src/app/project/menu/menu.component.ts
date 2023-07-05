@@ -24,7 +24,6 @@ export class MenuComponent implements OnInit, OnDestroy {
       this.isAuthenticated = !!user;
       // console.log('!user', !user);
       // console.log('!!user', !!user);
-
     });
   }
 
