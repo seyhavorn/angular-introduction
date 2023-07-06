@@ -46,9 +46,6 @@ import { FormTdExComponent } from './form/form-td-ex/form-td-ex.component';
 import { ReactiveFormComponent } from './form/reactive-form/reactive-form.component';
 import { ReactiveFormExComponent } from './form/reactive-form-ex/reactive-form-ex.component';
 import { ProjectModulesComponent } from './project/project-modules/project-modules.component';
-import { AppPipesComponent } from './pipes/app-pipes/app-pipes.component';
-import { ShortenPipe } from './pipes/pipes/shorten.pipe';
-import { FilterPipe } from './pipes/pipes/filter.pipe';
 import { AppHttpComponent } from './http/app-http/app-http.component';
 import { HttpRequestComponent } from './http/http-request/http-request.component';
 import { environment } from '../environments/environment';
@@ -57,13 +54,14 @@ import { ShoppingListModule } from './project/shopping-list/shopping-list.module
 import { SharedModule } from './project/shared/shared.module';
 import { CoreModules } from './core.module';
 import { AuthModule } from './project/project-auth/auth.module';
+import { LogginService } from './project/Services/loggin.service';
+import { StandAloneModule } from './stand-alone/stand-alone.module';
+import { PipeModule } from './pipes/pipe.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    ShortenPipe,
-    FilterPipe,
     ProjectModulesComponent,
     DirectiveModulesComponent,
     BasicHighlightDirective,
@@ -97,7 +95,6 @@ import { AuthModule } from './project/project-auth/auth.module';
     FormTdExComponent,
     ReactiveFormComponent,
     ReactiveFormExComponent,
-    AppPipesComponent,
     AppHttpComponent,
     HttpRequestComponent,
   ],
@@ -110,9 +107,11 @@ import { AuthModule } from './project/project-auth/auth.module';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfigProject),
     ShoppingListModule,
+    PipeModule,
     AuthModule,
     SharedModule,
     CoreModules,
+    StandAloneModule
   ],
   providers: [
     LoginService,

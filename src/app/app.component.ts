@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoginService } from "./serviceDependency/services/loginService";
+import { LoginService } from './serviceDependency/services/loginService';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +11,11 @@ export class AppComponent {
   protected outputText: string | undefined;
 
   constructor(
-    private loginService: LoginService
-  ) {
-  }
+    private loginService: LoginService,
+  ) {}
 
   onGet(): void {
     this.title = 'Hello';
     this.loginService.logStatusChange('pending');
   }
-
 }

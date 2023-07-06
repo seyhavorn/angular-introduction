@@ -18,4 +18,9 @@ export const projectRoute: Route[] = [
         (m) => m.ShoppingListModule
       ),
   },
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('../project/project-auth/auth.module').then((m) => m.AuthModule),
+  },
 ];
