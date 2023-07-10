@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { SAHighlightDirective } from './sa-highlight.directive';
 
 @NgModule({
-  declarations: [SAHighlightDirective],
-  exports: [SAHighlightDirective],
+  declarations: [],
+  exports: [],
 })
 export class SaSharedModule {}

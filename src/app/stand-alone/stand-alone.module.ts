@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppSaComponent } from './app-sa/app-sa.component';
-import { SaSharedModule } from './shared/sa-shared.module';
-import { SaDetailsComponent } from './welcome/sa-details/sa-details.component';
-import { WelcomeComponent } from './welcome/welcome.component';
+
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
-  declarations: [AppSaComponent, WelcomeComponent, SaDetailsComponent],
-  imports: [CommonModule, SaSharedModule],
-  exports: [AppSaComponent, SaDetailsComponent],
+  declarations: [],
+  imports: [CommonModule, BrowserModule],
+  providers: [],
+  exports: [],
 })
 export class StandAloneModule {}
