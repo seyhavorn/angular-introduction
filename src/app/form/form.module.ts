@@ -6,6 +6,8 @@ import { FormComponent } from './form/form.component';
 import { FormTdExComponent } from './form-td-ex/form-td-ex.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ReactiveFormExComponent } from './reactive-form-ex/reactive-form-ex.component';
+import { FormLoginComponent } from './form-login/form-login.component';
+import { LoginService } from './form-login/login.service';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,7 @@ import { ReactiveFormExComponent } from './reactive-form-ex/reactive-form-ex.com
     FormTdExComponent,
     ReactiveFormComponent,
     ReactiveFormExComponent,
+    FormLoginComponent,
   ],
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   exports: [
@@ -23,5 +26,6 @@ import { ReactiveFormExComponent } from './reactive-form-ex/reactive-form-ex.com
     ReactiveFormComponent,
     ReactiveFormExComponent,
   ],
+  providers: [LoginService],
 })
 export class FormModule {}

@@ -44,7 +44,7 @@ import { DependencyModule } from './serviceDependency/depependency.module';
     // RoutingModule,
     DependencyModule,
     DataBindingModule,
-    AuthModule,
+    // AuthModule,
     ObservableModule,
     SharedModule,
     CoreModules,
